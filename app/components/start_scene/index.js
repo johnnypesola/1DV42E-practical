@@ -1,7 +1,7 @@
 import React, { View, Text, StyleSheet } from "react-native";
 import Button from "react-native-button";
 //import { Actions } from "react-native-router-flux";
-import Router from '../../router';
+// import Router from '../../router';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,17 +14,21 @@ const styles = StyleSheet.create({
 
 class StartScene extends React.Component {
 
-  redirectToLogin() {
+  _navigate( name ) {
 
-    // `navigator` is passed into your scene component when you have
-    // implemented getSceneClass in your route
-    this.props.navigator.push( Router.getLoginRoute() );
+    this.props.navigator.push({
+      name: 'Login',
+      passProps: {
+        name: name
+      }
+    });
   }
 
   render() {
     return (
-      <View style={ [styles.container, this.props.style] }>
-        <Button onPress={ this.redirectToLogin() }>
+      <View style={ styles.container }>
+        <Text>Detta är Start</Text>
+        <Button onPress={ () => this._navigate( 'A name from Start' ) }>
           Till Login
         </Button>
       </View>

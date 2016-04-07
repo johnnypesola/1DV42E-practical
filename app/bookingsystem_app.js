@@ -1,19 +1,42 @@
-import React, { AppRegistry, Component, StyleSheet, Text, View } from 'react-native';
-// import { Actions, Scene, Router } from 'react-native-router-flux';
+import React, { AppRegistry, Component, StyleSheet, Text, View, Navigator } from 'react-native';
 
-import ExNavigator from '@exponent/react-native-navigator';
 import Router from './router';
 import LoginScene from './components/login_scene/index';
 import StartScene from './components/start_scene/index';
 
 class BookingSystemApp extends Component {
 
+  renderScene( route, navigator ) {
+
+    let sceneToReturn;
+
+    if ( route.name === 'Start' ) {
+      sceneToReturn = (
+        <StartScene
+          navigator={ navigator }
+          { ...route.passProps }
+        />
+      );
+    }
+
+    if ( route.name === 'Login' ) {
+      sceneToReturn = (
+        <LoginScene
+          navigator={ navigator }
+          { ...route.passProps }
+        />
+      );
+    }
+
+    return sceneToReturn;
+  }
+
   render() {
     return (
-      <ExNavigator
-        initialRoute={ Router.getLoginRoute() }
+      <Navigator
         style={ { flex: 1 } }
-        sceneStyle={ { paddingTop: 64 } }
+        initialRoute={ { name: 'Start' } }
+        renderScene={ this.renderScene }
       />
     );
   }

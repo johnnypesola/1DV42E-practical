@@ -14,22 +14,23 @@ const styles = StyleSheet.create({
 
 class LoginScene extends React.Component {
 
-  redirectToStart() {
+  _navigate( name ) {
 
-    // `navigator` is passed into your scene component when you have
-    // implemented getSceneClass in your route
-    this.props.navigator.push( Router.getStartRoute() );
+    this.props.navigator.push({
+      name: 'Start',
+      passProps: {
+        name: name
+      }
+    });
   }
 
   render() {
     return (
-      <View style={ [styles.container, this.props.style] }>
-        <Text>Login page: { this.props.data }</Text>
-        <Button onPress={ this.redirectToStart() }>
+      <View style={ styles.container }>
+        <Text>Detta är Login</Text>
+        <Button onPress={ () => this._navigate( 'A name from Login' ) }>
           Till Start
         </Button>
-        <Button>Change title</Button>
-        <Button>Back</Button>
       </View>
     );
   }
