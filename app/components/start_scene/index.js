@@ -1,4 +1,4 @@
-import React, { View, Text, StyleSheet } from "react-native";
+import React, { View, Text, StyleSheet, TextInput } from "react-native";
 import Button from "react-native-button";
 //import { Actions } from "react-native-router-flux";
 // import Router from '../../router';
@@ -14,6 +14,14 @@ const styles = StyleSheet.create({
 
 class StartScene extends React.Component {
 
+  constructor( props ) {
+    super( props );
+
+    this.state = {
+      someText: "something"
+    };
+  }
+
   _navigate( name ) {
 
     this.props.navigator.push({
@@ -27,10 +35,15 @@ class StartScene extends React.Component {
   render() {
     return (
       <View style={ styles.container }>
-        <Text>Detta är Start</Text>
+        <Text>Detta Ã¤r Start</Text>
         <Button onPress={ () => this._navigate( 'A name from Start' ) }>
           Till Login
         </Button>
+        <Text>{ this.state.someText }</Text>
+        <TextInput
+          onChangeText={ ( someText ) => this.setState({ someText }) }
+          value={ this.state.someText }
+        />
       </View>
     );
   }
