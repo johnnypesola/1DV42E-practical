@@ -1,7 +1,6 @@
 import React, { View, Text, StyleSheet } from "react-native";
 import Button from "react-native-button";
-// import { Actions } from "react-native-router-flux";
-import Router from '../../router';
+import StartScene from '../start_scene/index';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +16,7 @@ class LoginScene extends React.Component {
   _navigate( name ) {
 
     this.props.navigator.push({
-      name: 'Start',
+      component: StartScene,
       passProps: {
         name: name
       }
