@@ -27,7 +27,7 @@ class LoginScene extends React.Component {
     return (
       <View style={ styles.container }>
         <Text>Detta är Login</Text>
-        <Button onPress={ () => this._navigate( 'A name from Login' ) }>
+        <Button onPress={ () => this.props.navigator.pop() }>
           Till Start
         </Button>
       </View>

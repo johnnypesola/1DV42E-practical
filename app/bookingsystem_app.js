@@ -28,25 +28,6 @@ class BookingSystemApp extends Component {
       />
     );
   }
-
-    /*
-    return (
-      <Router>
-        <Scene key='root'>
-          <Scene
-            key='login'
-            component={ LoginScene }
-            title='Logga in'
-          />
-          <Scene
-            key='start'
-            component={ StartScene }
-            title='Start'
-          />
-        </Scene>
-      </Router>
-    );
-    */
 }
 
 export default BookingSystemApp;

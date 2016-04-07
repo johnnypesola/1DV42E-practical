@@ -21,7 +21,7 @@ class StartScene extends React.Component {
     };
   }
 
-  _navigate( name ) {
+  navigate( name ) {
 
     this.props.navigator.push({
       component: LoginScene,
@@ -35,7 +35,7 @@ class StartScene extends React.Component {
     return (
       <View style={ styles.container }>
         <Text>Detta är Start</Text>
-        <Button onPress={ () => this._navigate( 'A name from Start' ) }>
+        <Button onPress={ () => this.navigate( 'A name from Start' ) }>
           Till Login
         </Button>
         <Text>{ this.state.someText }</Text>
