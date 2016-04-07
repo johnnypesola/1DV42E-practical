@@ -1,14 +1,24 @@
 import React, { AppRegistry, Component, StyleSheet, Text, View } from 'react-native';
-import { Actions, Scene, Router } from 'react-native-router-flux';
+// import { Actions, Scene, Router } from 'react-native-router-flux';
 
-// import Welcome from 'app/components/start_screen/welcome-text';
-
+import ExNavigator from '@exponent/react-native-navigator';
+import Router from './router';
 import LoginScene from './components/login_scene/index';
 import StartScene from './components/start_scene/index';
 
 class BookingSystemApp extends Component {
 
   render() {
+    return (
+      <ExNavigator
+        initialRoute={ Router.getLoginRoute() }
+        style={ { flex: 1 } }
+        sceneStyle={ { paddingTop: 64 } }
+      />
+    );
+  }
+
+    /*
     return (
       <Router>
         <Scene key='root'>
@@ -25,7 +35,7 @@ class BookingSystemApp extends Component {
         </Scene>
       </Router>
     );
-  }
+    */
 }
 
 export default BookingSystemApp;
