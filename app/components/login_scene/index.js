@@ -16,7 +16,7 @@ class LoginScene extends React.Component {
     return (
       <View style={ [styles.container, this.props.style] }>
         <Text>Login page: { this.props.data }</Text>
-        <Button onPress={ Actions.loginModal2 }>Login 2</Button>
+        <Button onPress={ Actions.start }>To start</Button>
         <Button onPress={ () => Actions.refresh({ title: "Changed title" }) }>Change title</Button>
         <Button onPress={ Actions.pop }>Back</Button>
       </View>
