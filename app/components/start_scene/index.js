@@ -1,7 +1,12 @@
-import React, { View, Text, StyleSheet, TextInput } from "react-native";
 import Button from "react-native-button";
 import LoginScene from '../login_scene/index';
 import Router from '../../router';
+import React, {
+  View,
+  Text,
+  StyleSheet,
+  TextInput
+} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
