@@ -48,11 +48,12 @@ class BookingSystemApp extends Component {
         navButtonText: {
           fontSize: 18,
           marginLeft: 13,
-          marginTop: 2,
+          marginTop: 14,
           backgroundColor: '#ffefef'
         },
         title: {
-          marginTop: 4,
+          marginTop: 14,
+          marginLeft: 20,
           fontSize: 16,
           backgroundColor: '#ffefff'
         }
