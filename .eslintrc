@@ -123,7 +123,7 @@
     "eol-last": 1,
     "func-names": 0,
     "func-style": 0,
-    "id-length": [2, {"exceptions": ["x", "y", "z", "C", "_"]}],
+    "id-length": [2, {"exceptions": ["x", "y", "z", "C", "t", "_"]}],
     "id-match": 0,
     "indent": [2, 2],
     "jsx-quotes": [1, "prefer-single"],
