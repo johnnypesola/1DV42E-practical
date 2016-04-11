@@ -1,5 +1,6 @@
 import React, { View, Text, StyleSheet } from "react-native";
-import Button from "react-native-button";
+//import Button from "react-native-button";
+import { Card, Button } from 'react-native-material-design';
 import StartScene from '../start_scene/index';
 import Router from '../../router';
 
@@ -18,10 +19,16 @@ class LoginScene extends React.Component {
 
     return (
       <View style={ styles.container }>
-        <Text>Detta är Login</Text>
-        <Button onPress={ () => this.props.navigator.pop() }>
-          Till Start
-        </Button>
+        <Card>
+          <Card.Body>
+            <Text>Detta är login.</Text>
+          </Card.Body>
+          <Card.Actions position='right'>
+            <Button text='Logga in'
+              onPress={ () => alert( 'Jag loggar nu in.' ) }
+            />
+          </Card.Actions>
+        </Card>
       </View>
     );
   }
