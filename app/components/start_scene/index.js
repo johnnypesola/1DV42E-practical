@@ -1,6 +1,8 @@
 import Button from "react-native-button";
 import LoginScene from '../login_scene/index';
 import Router from '../../router';
+import FurnituringService from '../../shared/services/furnituring';
+
 import React, {
   View,
   Text,
@@ -25,6 +27,23 @@ class StartScene extends React.Component {
     this.state = {
       someText: "something"
     };
+  }
+
+  componentDidMount() {
+    this.getFurnituring();
+  }
+
+  getFurnituring() {
+
+    const furnituring = new FurnituringService();
+
+    furnituring.getAll()
+      .then( ( response ) => {
+
+        this.setState({
+          someText: response[0].Name
+        });
+      });
   }
 
   render() {
