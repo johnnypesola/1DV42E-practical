@@ -9,7 +9,8 @@
   "dependencies": {
     "react": "^0.14.8",
     "react-native": "^0.22.2",
-    "react-native-button": "^1.4.2"
+    "react-native-button": "^1.4.2",
+    "react-native-material-design": "^0.3.3"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
