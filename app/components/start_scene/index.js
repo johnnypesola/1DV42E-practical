@@ -1,6 +1,14 @@
-import React, { View, Text, StyleSheet, TextInput } from "react-native";
 import Button from "react-native-button";
 import LoginScene from '../login_scene/index';
+import Router from '../../router';
+import FurnituringService from '../../shared/services/furnituring';
+
+import React, {
+  View,
+  Text,
+  StyleSheet,
+  TextInput
+} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -21,21 +29,29 @@ class StartScene extends React.Component {
     };
   }
 
-  navigate( name ) {
+  componentDidMount() {
+    this.getFurnituring();
+  }
 
-    this.props.navigator.push({
-      component: LoginScene,
-      passProps: {
-        name: name
-      }
-    });
+  getFurnituring() {
+
+    const furnituring = new FurnituringService();
+
+    furnituring.getAll()
+      .then( ( response ) => {
+
+        this.setState({
+          someText: response[0].Name
+        });
+      });
   }
 
   render() {
+
     return (
       <View style={ styles.container }>
         <Text>Detta är Start</Text>
-        <Button onPress={ () => this.navigate( 'A name from Start' ) }>
+        <Button onPress={ () => Router.navigate( this.props.navigator, LoginScene, 'A name from Start' ) }>
           Till Login
         </Button>
         <Text>{ this.state.someText }</Text>
